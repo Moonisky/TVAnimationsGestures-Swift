@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		73555E1C19FAC823005903CB /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 73555E1B19FAC823005903CB /* README.md */; };
 		737460F519F7922D00C1A844 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737460F419F7922D00C1A844 /* AppDelegate.swift */; };
 		737460F719F7922D00C1A844 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737460F619F7922D00C1A844 /* ViewController.swift */; };
 		737460FA19F7922D00C1A844 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 737460F819F7922D00C1A844 /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		73555E1B19FAC823005903CB /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		737460EF19F7922D00C1A844 /* 表格动画手势示例.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "表格动画手势示例.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		737460F319F7922D00C1A844 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		737460F419F7922D00C1A844 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 		737460E619F7922D00C1A844 = {
 			isa = PBXGroup;
 			children = (
+				73555E1B19FAC823005903CB /* README.md */,
 				7374612719F7A6BC00C1A844 /* MessageUI.framework */,
 				737460F119F7922D00C1A844 /* 表格动画手势示例 */,
 				7374610719F7922D00C1A844 /* 表格动画手势示例Tests */,
@@ -264,6 +267,7 @@
 				7374612419F79D6500C1A844 /* SectionHeaderView.swift in Sources */,
 				7374612219F79B6100C1A844 /* SectionInfo.swift in Sources */,
 				737460F519F7922D00C1A844 /* AppDelegate.swift in Sources */,
+				73555E1C19FAC823005903CB /* README.md in Sources */,
 				7374611819F7929B00C1A844 /* HighlightingTextView.swift in Sources */,
 				7374611E19F798F900C1A844 /* Play.swift in Sources */,
 			);
