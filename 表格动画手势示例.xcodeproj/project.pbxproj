@@ -13,6 +13,15 @@
 		737460FC19F7922D00C1A844 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 737460FB19F7922D00C1A844 /* Images.xcassets */; };
 		737460FF19F7922D00C1A844 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 737460FD19F7922D00C1A844 /* LaunchScreen.xib */; };
 		7374610B19F7922D00C1A844 /* ________Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7374610A19F7922D00C1A844 /* ________Tests.swift */; };
+		7374611519F7927500C1A844 /* SectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7374611419F7927500C1A844 /* SectionHeaderView.xib */; };
+		7374611819F7929B00C1A844 /* HighlightingTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7374611719F7929B00C1A844 /* HighlightingTextView.swift */; };
+		7374611A19F793A300C1A844 /* QuoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7374611919F793A300C1A844 /* QuoteCell.swift */; };
+		7374611E19F798F900C1A844 /* Play.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7374611D19F798F900C1A844 /* Play.swift */; };
+		7374612019F7994200C1A844 /* Quotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7374611F19F7994200C1A844 /* Quotation.swift */; };
+		7374612219F79B6100C1A844 /* SectionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7374612119F79B6100C1A844 /* SectionInfo.swift */; };
+		7374612419F79D6500C1A844 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7374612319F79D6500C1A844 /* SectionHeaderView.swift */; };
+		7374612619F7A5DA00C1A844 /* PlaysAndQuotations.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7374612519F7A5DA00C1A844 /* PlaysAndQuotations.plist */; };
+		7374612819F7A6BC00C1A844 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7374612719F7A6BC00C1A844 /* MessageUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +45,15 @@
 		7374610419F7922D00C1A844 /* 表格动画手势示例Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "表格动画手势示例Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7374610919F7922D00C1A844 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7374610A19F7922D00C1A844 /* ________Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "________Tests.swift"; sourceTree = "<group>"; };
+		7374611419F7927500C1A844 /* SectionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SectionHeaderView.xib; sourceTree = "<group>"; };
+		7374611719F7929B00C1A844 /* HighlightingTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HighlightingTextView.swift; path = Cells/HighlightingTextView.swift; sourceTree = "<group>"; };
+		7374611919F793A300C1A844 /* QuoteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuoteCell.swift; sourceTree = "<group>"; };
+		7374611D19F798F900C1A844 /* Play.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Play.swift; path = "Model Classes/Play.swift"; sourceTree = "<group>"; };
+		7374611F19F7994200C1A844 /* Quotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Quotation.swift; path = "Model Classes/Quotation.swift"; sourceTree = "<group>"; };
+		7374612119F79B6100C1A844 /* SectionInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionInfo.swift; sourceTree = "<group>"; };
+		7374612319F79D6500C1A844 /* SectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
+		7374612519F7A5DA00C1A844 /* PlaysAndQuotations.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PlaysAndQuotations.plist; sourceTree = "<group>"; };
+		7374612719F7A6BC00C1A844 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7374612819F7A6BC00C1A844 /* MessageUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +78,7 @@
 		737460E619F7922D00C1A844 = {
 			isa = PBXGroup;
 			children = (
+				7374612719F7A6BC00C1A844 /* MessageUI.framework */,
 				737460F119F7922D00C1A844 /* 表格动画手势示例 */,
 				7374610719F7922D00C1A844 /* 表格动画手势示例Tests */,
 				737460F019F7922D00C1A844 /* Products */,
@@ -77,11 +97,16 @@
 		737460F119F7922D00C1A844 /* 表格动画手势示例 */ = {
 			isa = PBXGroup;
 			children = (
+				7374611C19F798DD00C1A844 /* Model Classes */,
+				7374611619F7927E00C1A844 /* Cells */,
 				737460F419F7922D00C1A844 /* AppDelegate.swift */,
 				737460F619F7922D00C1A844 /* ViewController.swift */,
+				7374612319F79D6500C1A844 /* SectionHeaderView.swift */,
+				7374612119F79B6100C1A844 /* SectionInfo.swift */,
 				737460F819F7922D00C1A844 /* Main.storyboard */,
 				737460FB19F7922D00C1A844 /* Images.xcassets */,
 				737460FD19F7922D00C1A844 /* LaunchScreen.xib */,
+				7374611419F7927500C1A844 /* SectionHeaderView.xib */,
 				737460F219F7922D00C1A844 /* Supporting Files */,
 			);
 			path = "表格动画手势示例";
@@ -90,6 +115,7 @@
 		737460F219F7922D00C1A844 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7374612519F7A5DA00C1A844 /* PlaysAndQuotations.plist */,
 				737460F319F7922D00C1A844 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -110,6 +136,24 @@
 				7374610919F7922D00C1A844 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7374611619F7927E00C1A844 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				7374611719F7929B00C1A844 /* HighlightingTextView.swift */,
+				7374611919F793A300C1A844 /* QuoteCell.swift */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		7374611C19F798DD00C1A844 /* Model Classes */ = {
+			isa = PBXGroup;
+			children = (
+				7374611D19F798F900C1A844 /* Play.swift */,
+				7374611F19F7994200C1A844 /* Quotation.swift */,
+			);
+			name = "Model Classes";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,7 +201,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0610;
-				ORGANIZATIONNAME = Semper_Idem;
+				ORGANIZATIONNAME = "星夜暮晨";
 				TargetAttributes = {
 					737460EE19F7922D00C1A844 = {
 						CreatedOnToolsVersion = 6.1;
@@ -192,9 +236,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7374612619F7A5DA00C1A844 /* PlaysAndQuotations.plist in Resources */,
 				737460FA19F7922D00C1A844 /* Main.storyboard in Resources */,
 				737460FF19F7922D00C1A844 /* LaunchScreen.xib in Resources */,
 				737460FC19F7922D00C1A844 /* Images.xcassets in Resources */,
+				7374611519F7927500C1A844 /* SectionHeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,8 +258,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7374611A19F793A300C1A844 /* QuoteCell.swift in Sources */,
 				737460F719F7922D00C1A844 /* ViewController.swift in Sources */,
+				7374612019F7994200C1A844 /* Quotation.swift in Sources */,
+				7374612419F79D6500C1A844 /* SectionHeaderView.swift in Sources */,
+				7374612219F79B6100C1A844 /* SectionInfo.swift in Sources */,
 				737460F519F7922D00C1A844 /* AppDelegate.swift in Sources */,
+				7374611819F7929B00C1A844 /* HighlightingTextView.swift in Sources */,
+				7374611E19F798F900C1A844 /* Play.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,9 +388,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = "表格动画手势示例/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -346,9 +402,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = "表格动画手势示例/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Release;
 		};
@@ -405,6 +464,7 @@
 				7374611019F7922D00C1A844 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7374611119F7922D00C1A844 /* Build configuration list for PBXNativeTarget "表格动画手势示例Tests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +473,7 @@
 				7374611319F7922D00C1A844 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

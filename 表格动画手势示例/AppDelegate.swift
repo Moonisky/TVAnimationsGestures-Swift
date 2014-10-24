@@ -3,7 +3,7 @@
 //  表格动画手势示例
 //
 //  Created by Semper Idem on 14-10-22.
-//  Copyright (c) 2014年 Semper_Idem. All rights reserved.
+//  Copyright (c) 2014年 星夜暮晨. All rights reserved.
 //
 
 import UIKit
@@ -12,10 +12,11 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var plays: NSMutableArray!
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
         return true
     }
 

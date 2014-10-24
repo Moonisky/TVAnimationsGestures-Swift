@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="APLTableViewController"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="2" customClass="SectionHeaderView" customModule="表格动画手势示例" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="48"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="37">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="48"/>
+                    <subviews>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3">
+                            <rect key="frame" x="35" y="14" width="44" height="21"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4">
+                            <rect key="frame" x="0.0" y="6" width="35" height="35"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="35" id="9"/>
+                                <constraint firstAttribute="height" constant="35" id="32"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                            <state key="normal" image="carat">
+                                <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="highlighted">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="toggleOpen:" destination="2" eventType="touchUpInside" id="54"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="4" firstAttribute="leading" secondItem="37" secondAttribute="leading" id="44"/>
+                        <constraint firstItem="4" firstAttribute="top" secondItem="37" secondAttribute="top" constant="6" id="45"/>
+                        <constraint firstItem="3" firstAttribute="top" secondItem="37" secondAttribute="top" constant="14" id="46"/>
+                        <constraint firstItem="3" firstAttribute="leading" secondItem="4" secondAttribute="trailing" id="51"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstItem="37" firstAttribute="top" secondItem="2" secondAttribute="top" id="47"/>
+                <constraint firstAttribute="trailing" secondItem="37" secondAttribute="trailing" id="48"/>
+                <constraint firstAttribute="bottom" secondItem="37" secondAttribute="bottom" id="49"/>
+                <constraint firstItem="37" firstAttribute="leading" secondItem="2" secondAttribute="leading" id="50"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="disclosureButton" destination="4" id="52"/>
+                <outlet property="titleLabel" destination="3" id="53"/>
+            </connections>
+        </view>
+    </objects>
+    <resources>
+        <image name="carat" width="11" height="11"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
