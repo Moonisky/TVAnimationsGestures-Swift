@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		73555E1C19FAC823005903CB /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 73555E1B19FAC823005903CB /* README.md */; };
 		737460F519F7922D00C1A844 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737460F419F7922D00C1A844 /* AppDelegate.swift */; };
 		737460F719F7922D00C1A844 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737460F619F7922D00C1A844 /* ViewController.swift */; };
 		737460FA19F7922D00C1A844 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 737460F819F7922D00C1A844 /* Main.storyboard */; };
@@ -267,7 +266,6 @@
 				7374612419F79D6500C1A844 /* SectionHeaderView.swift in Sources */,
 				7374612219F79B6100C1A844 /* SectionInfo.swift in Sources */,
 				737460F519F7922D00C1A844 /* AppDelegate.swift in Sources */,
-				73555E1C19FAC823005903CB /* README.md in Sources */,
 				7374611819F7929B00C1A844 /* HighlightingTextView.swift in Sources */,
 				7374611E19F798F900C1A844 /* Play.swift in Sources */,
 			);

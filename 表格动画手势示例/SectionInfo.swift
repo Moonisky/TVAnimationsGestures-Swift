@@ -29,7 +29,7 @@ class SectionInfo: NSObject {
     }
     
     func insertRowHeights(rowHeightArray: NSArray, atIndexes: NSIndexSet) {
-        self.rowHeights.insertObjects(rowHeightArray, atIndexes: atIndexes)
+        self.rowHeights.insertObjects(rowHeightArray as [AnyObject], atIndexes: atIndexes)
     }
     
     func removeObjectFromRowHeightsAtIndex(idx: Int) {
@@ -45,6 +45,6 @@ class SectionInfo: NSObject {
     }
     
     func replaceRowHeightsAtIndexes(indexes: NSIndexSet, withRowHeight: NSArray) {
-        self.rowHeights.replaceObjectsAtIndexes(indexes, withObjects: withRowHeight)
+        self.rowHeights.replaceObjectsAtIndexes(indexes, withObjects: withRowHeight as [AnyObject])
     }
 }

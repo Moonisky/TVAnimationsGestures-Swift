@@ -75,9 +75,9 @@ class ViewController: UITableViewController,MFMailComposeViewControllerDelegate,
             var infoArray = NSMutableArray()
             
             for play in self.plays {
-                var dic = (play as Play).quotations
+                var dic = (play as! Play).quotations
                 var sectionInfo = SectionInfo()
-                sectionInfo.play = play as Play
+                sectionInfo.play = play as! Play
                 sectionInfo.open = false
                 
                 var defaultRowHeight = DefaultRowHeight
@@ -100,7 +100,7 @@ class ViewController: UITableViewController,MFMailComposeViewControllerDelegate,
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // 这个方法返回对应的section有多少个元素，也就是多少行
-        var sectionInfo: SectionInfo = self.sectionInfoArray[section] as SectionInfo
+        var sectionInfo: SectionInfo = self.sectionInfoArray[section] as! SectionInfo
         var numStoriesInSection = sectionInfo.play.quotations.count
         var sectionOpen = sectionInfo.open!
         
@@ -111,7 +111,7 @@ class ViewController: UITableViewController,MFMailComposeViewControllerDelegate,
         // 返回指定的row 的cell。这个地方是比较关键的地方，一般在这个地方来定制各种个性化的 cell元素。这里只是使用最简单最基本的cell 类型。其中有一个主标题 cell.textLabel 还有一个副标题cell.detailTextLabel,  还有一个 image在最前头 叫cell.imageView.  还可以设置右边的图标，通过cell.accessoryType 可以设置是饱满的向右的蓝色箭头，还是单薄的向右箭头，还是勾勾标记。
         
         let QuoteCellIdentifier = "QuoteCellIdentifier"
-        var cell: QuoteCell = tableView.dequeueReusableCellWithIdentifier(QuoteCellIdentifier) as QuoteCell
+        var cell: QuoteCell = tableView.dequeueReusableCellWithIdentifier(QuoteCellIdentifier) as! QuoteCell
         
         if MFMailComposeViewController.canSendMail() {
             
@@ -124,18 +124,18 @@ class ViewController: UITableViewController,MFMailComposeViewControllerDelegate,
             cell.longPressRecognizer = nil
         }
         
-        var play:Play = (self.sectionInfoArray[indexPath.section] as SectionInfo).play
-        cell.quotation = play.quotations[indexPath.row] as Quotation
+        var play:Play = (self.sectionInfoArray[indexPath.section] as! SectionInfo).play
+        cell.quotation = play.quotations[indexPath.row] as! Quotation
 
-        cell.setQuotation(cell.quotation)
-        cell.setLongPressRecognizer(cell.longPressRecognizer)
+        cell.setTheQuotation(cell.quotation)
+        cell.setTheLongPressRecognizer(cell.longPressRecognizer)
         return cell
     }
     
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         // 返回指定的 section header 的view，如果没有，这个函数可以不返回view
-        var sectionHeaderView: SectionHeaderView = self.tableView.dequeueReusableHeaderFooterViewWithIdentifier(SectionHeaderViewIdentifier) as SectionHeaderView
-        var sectionInfo: SectionInfo = self.sectionInfoArray[section] as SectionInfo
+        var sectionHeaderView: SectionHeaderView = self.tableView.dequeueReusableHeaderFooterViewWithIdentifier(SectionHeaderViewIdentifier) as! SectionHeaderView
+        var sectionInfo: SectionInfo = self.sectionInfoArray[section] as! SectionInfo
         sectionInfo.headerView = sectionHeaderView
         
         sectionHeaderView.titleLabel.text = sectionInfo.play.name
@@ -147,9 +147,9 @@ class ViewController: UITableViewController,MFMailComposeViewControllerDelegate,
 
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         // 这个方法返回指定的 row 的高度
-        var sectionInfo: SectionInfo = self.sectionInfoArray[indexPath.section] as SectionInfo
+        var sectionInfo: SectionInfo = self.sectionInfoArray[indexPath.section] as! SectionInfo
 
-        return CGFloat(sectionInfo.objectInRowHeightsAtIndex(indexPath.row) as NSNumber)
+        return CGFloat(sectionInfo.objectInRowHeightsAtIndex(indexPath.row) as! NSNumber)
         //又或者，返回单元格的行高
     }
     
@@ -158,7 +158,7 @@ class ViewController: UITableViewController,MFMailComposeViewControllerDelegate,
     
     func sectionHeaderView(sectionHeaderView: SectionHeaderView, sectionOpened: Int) {
 
-        var sectionInfo: SectionInfo = self.sectionInfoArray[sectionOpened] as SectionInfo
+        var sectionInfo: SectionInfo = self.sectionInfoArray[sectionOpened] as! SectionInfo
         
         sectionInfo.open = true
         
@@ -178,7 +178,7 @@ class ViewController: UITableViewController,MFMailComposeViewControllerDelegate,
         var previousOpenSectionIndex = self.opensectionindex
         if previousOpenSectionIndex != NSNotFound {
             
-            var previousOpenSection: SectionInfo = self.sectionInfoArray[previousOpenSectionIndex] as SectionInfo
+            var previousOpenSection: SectionInfo = self.sectionInfoArray[previousOpenSectionIndex] as! SectionInfo
             previousOpenSection.open = false
             previousOpenSection.headerView.toggleOpenWithUserAction(false)
             var countOfRowsToDelete = previousOpenSection.play.quotations.count
@@ -200,8 +200,8 @@ class ViewController: UITableViewController,MFMailComposeViewControllerDelegate,
         
         // 应用单元格的更新
         self.tableView.beginUpdates()
-        self.tableView.deleteRowsAtIndexPaths(indexPathsToDelete, withRowAnimation: deleteAnimation)
-        self.tableView.insertRowsAtIndexPaths(indexPathsToInsert, withRowAnimation: insertAnimation)
+        self.tableView.deleteRowsAtIndexPaths(indexPathsToDelete as [AnyObject], withRowAnimation: deleteAnimation)
+        self.tableView.insertRowsAtIndexPaths(indexPathsToInsert as [AnyObject], withRowAnimation: insertAnimation)
         
         self.opensectionindex = sectionOpened
 
@@ -211,7 +211,7 @@ class ViewController: UITableViewController,MFMailComposeViewControllerDelegate,
     func sectionHeaderView(sectionHeaderView: SectionHeaderView, sectionClosed: Int) {
         
         // 在表格关闭的时候，创建一个包含单元格索引路径的数组，接下来从表格中删除这些行
-        var sectionInfo: SectionInfo = self.sectionInfoArray[sectionClosed] as SectionInfo
+        var sectionInfo: SectionInfo = self.sectionInfoArray[sectionClosed] as! SectionInfo
         
         sectionInfo.open = false
         var countOfRowsToDelete = self.tableView.numberOfRowsInSection(sectionClosed)
@@ -221,7 +221,7 @@ class ViewController: UITableViewController,MFMailComposeViewControllerDelegate,
             for (var i = 0; i < countOfRowsToDelete; i++) {
                 indexPathsToDelete.addObject(NSIndexPath(forRow: i, inSection: sectionClosed))
             }
-            self.tableView.deleteRowsAtIndexPaths(indexPathsToDelete, withRowAnimation: UITableViewRowAnimation.Top)
+            self.tableView.deleteRowsAtIndexPaths(indexPathsToDelete as [AnyObject], withRowAnimation: UITableViewRowAnimation.Top)
         }
         self.opensectionindex = NSNotFound
     }
@@ -243,8 +243,8 @@ class ViewController: UITableViewController,MFMailComposeViewControllerDelegate,
             let newPinchedIndexPath = self.tableView.indexPathForRowAtPoint(pinchLocation)
             self.pinchedIndexPath = newPinchedIndexPath
             
-            let sectionInfo: SectionInfo = self.sectionInfoArray[newPinchedIndexPath!.section] as SectionInfo
-            self.initialPinchHeight = sectionInfo.objectInRowHeightsAtIndex(newPinchedIndexPath!.row) as CGFloat
+            let sectionInfo: SectionInfo = self.sectionInfoArray[newPinchedIndexPath!.section] as! SectionInfo
+            self.initialPinchHeight = sectionInfo.objectInRowHeightsAtIndex(newPinchedIndexPath!.row) as! CGFloat
             NSLog("pinch Gesture began")
             // 也可以设置为 initialPinchHeight = uniformRowHeight
             
@@ -272,7 +272,7 @@ class ViewController: UITableViewController,MFMailComposeViewControllerDelegate,
                 newHeight = round(CGFloat(DefaultRowHeight))
             }
             
-            let sectionInfo: SectionInfo = self.sectionInfoArray[indexPath!.section] as SectionInfo
+            let sectionInfo: SectionInfo = self.sectionInfoArray[indexPath!.section] as! SectionInfo
             sectionInfo.replaceObjectInRowHeightsAtIndex(indexPath!.row, withObject: (newHeight))
             // 也可以设置为 uniformRowHeight = newHeight
             
@@ -320,7 +320,7 @@ class ViewController: UITableViewController,MFMailComposeViewControllerDelegate,
     
     func emailMenuButtonPressed(menuController: UIMenuController) {
         
-        let menuItem: EmailMenuItem = UIMenuController.sharedMenuController().menuItems![0] as EmailMenuItem
+        let menuItem: EmailMenuItem = UIMenuController.sharedMenuController().menuItems![0] as! EmailMenuItem
         if menuItem.indexPath != nil {
             self.resignFirstResponder()
             self.sendEmailForEntryAtIndexPath(menuItem.indexPath)
@@ -329,8 +329,8 @@ class ViewController: UITableViewController,MFMailComposeViewControllerDelegate,
     
     func sendEmailForEntryAtIndexPath(indexPath: NSIndexPath) {
         
-        let play: Play = self.plays[indexPath.section] as Play
-        let quotation: Quotation = play.quotations[indexPath.row] as Quotation
+        let play: Play = self.plays[indexPath.section] as! Play
+        let quotation: Quotation = play.quotations[indexPath.row] as! Quotation
         
         // 在实际使用中，可以调用邮件的API来实现真正的发送邮件
         println("用以下语录发送邮件: \(quotation.quotation)")
@@ -356,17 +356,17 @@ class ViewController: UITableViewController,MFMailComposeViewControllerDelegate,
             for playDictionary in playDictionariesArray! {
                 
                 var play: Play! = Play()
-                play.name = playDictionary["playName"] as String
+                play.name = playDictionary["playName"] as! String
                 
-                var quotationDictionaries:NSArray = playDictionary["quotations"] as NSArray
+                var quotationDictionaries:NSArray = playDictionary["quotations"] as! NSArray
                 var quotations = NSMutableArray(capacity: quotationDictionaries.count)
                 
                 for quotationDictionary in quotationDictionaries {
                     
-                    var quotationDic:NSDictionary = quotationDictionary as NSDictionary
+                    var quotationDic:NSDictionary = quotationDictionary as! NSDictionary
                     var quotation: Quotation = Quotation()
 
-                    quotation.setValuesForKeysWithDictionary(quotationDic)
+                    quotation.setValuesForKeysWithDictionary(quotationDic as [NSObject : AnyObject])
                     quotations.addObject(quotation)
                 }
                 play.quotations = quotations
